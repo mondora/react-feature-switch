@@ -1,10 +1,18 @@
 {
     "extends": "eslint:recommended",
     "parser": "babel-eslint",
+    "plugins": [
+        "react"
+    ],
     "env": {
         "browser": true,
         "mocha": true,
-        "node": true
+        "node": true,
+        "es6": true
+    },
+    "ecmaFeatures": {
+        "modules": true,
+        "jsx": true
     },
     "rules": {
         "brace-style": [2, "1tbs"],
@@ -15,11 +23,8 @@
         "new-cap": [2, {"capIsNew": false}],
         "no-console": [0],
         "no-multi-spaces": [0],
+        "no-unused-vars": [2, {"args": "after-used", "varsIgnorePattern": "React"}],
         "no-underscore-dangle": [0],
-        "no-constant-condition": [0],
-        "no-var": [2],
-        "prefer-template": [2],
-        "prefer-arrow-callback": [2],
         "object-curly-spacing": [2, "never"],
         "one-var": [2, "never"],
         "quotes": [2, "single"],
@@ -28,6 +33,41 @@
         "space-before-blocks": [2, "always"],
         "space-before-function-paren": [2, "always"],
         "space-in-parens": [2, "never"],
-        "strict": [2, "never"]
+        "strict": [2, "never"],
+        "react/jsx-no-undef": [2],
+        "jsx-quotes": [2, "prefer-single"],
+        "react/sort-prop-types": [2],
+        "react/jsx-sort-props": [0],
+        "react/jsx-uses-react": [2],
+        "react/jsx-uses-vars": [2],
+        "react/no-did-mount-set-state": [2],
+        "react/no-did-update-set-state": [2],
+        "react/no-unknown-property": [2],
+        "react/prop-types": [2],
+        "react/react-in-jsx-scope": [2],
+        "react/self-closing-comp": [2],
+        "react/sort-comp": [2, {
+            "order": [
+                "constructor",
+                "lifecycle",
+                "everything-else",
+                "rendering"
+            ],
+            "groups": {
+                "rendering": [
+                    "/^render.+$/",
+                    "render"
+                ]
+            }
+        }],
+        "react/wrap-multilines": [2],
+        "react/jsx-closing-bracket-location": [2, "after-props"],
+        "react/jsx-indent-props": [2, 4],
+        "react/jsx-space-before-closing": [2, "never"],
+        "no-constant-condition": [0],
+        "no-var": [2],
+        "prefer-template": [2],
+        "prefer-arrow-callback": [2],
+        "no-case-declarations": [0]
     }
 }
