@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
 import {featureListType} from './featureListType';
 
 export default class FeatureSwitchRoot extends Component {
