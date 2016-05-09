@@ -5,6 +5,7 @@ import chaiEnzyme from 'chai-enzyme';
 import FeatureSwitch from '../../src/components/FeatureSwitch';
 import FeatureNext from '../../src/components/FeatureNext';
 import FeatureCurrent from '../../src/components/FeatureCurrent';
+import FeatureSwitchRoot from '../../src/components/FeatureSwitchRoot';
 import jsdom from 'jsdom'
 
 const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
@@ -24,22 +25,8 @@ describe('FeatureSwitch', () => {
         expect(component.find('.iAmInvisible')).to.have.length(0);
     });
     it('should render nothing except FeatureNext components because passed feature is enable', () => {
-        const RootComponent = class FeatureNext extends Component {
-            static childContextTypes = {
-                featuresList: PropTypes.shape({
-                    featureName: PropTypes.string.isRequired,
-                    enable: PropTypes.bool.isRequired
-                })
-            }
-            getChildContext = () => {
-                return {featuresList: [{featureName: 'feature1', enable: true}]};
-            }
-            render () {
-                return <div>{this.props.children}</div>;
-            }
-        };
         const component = mount(
-            <RootComponent>
+            <FeatureSwitchRoot featureList={[{featureName: 'feature1', enable: true}]}>
                 <div>
                     <FeatureSwitch featureName='feature1'>
                         <FeatureNext/>
@@ -48,28 +35,14 @@ describe('FeatureSwitch', () => {
                         <div className='iAmInvisible'>test</div>
                     </FeatureSwitch>
                 </div>
-            </RootComponent>);
+            </FeatureSwitchRoot>);
         expect(component.find('.iAmInvisible')).to.have.length(0);
         expect(component.find('.featureCurrent')).to.have.length(0);
         expect(component.find('.featureNext')).to.have.length(1);
     });
     it('should render nothing except FeatureCurrent components because passed feature is not enable', () => {
-        const RootComponent = class FeatureNext extends Component {
-            static childContextTypes = {
-                featuresList: PropTypes.shape({
-                    featureName: PropTypes.string.isRequired,
-                    enable: PropTypes.bool.isRequired
-                })
-            }
-            getChildContext = () => {
-                return {featuresList: [{featureName: 'feature1', enable: false}]};
-            }
-            render () {
-                return <div>{this.props.children}</div>;
-            }
-        };
         const component = mount(
-            <RootComponent>
+            <FeatureSwitchRoot featureList={[{featureName: 'feature1', enable: false}]}>
                 <div>
                     <FeatureSwitch featureName='feature1'>
                         <FeatureNext/>
@@ -78,7 +51,7 @@ describe('FeatureSwitch', () => {
                         <div className='iAmInvisible'>test</div>
                     </FeatureSwitch>
                 </div>
-            </RootComponent>);
+            </FeatureSwitchRoot>);
         expect(component.find('.iAmInvisible')).to.have.length(0);
         expect(component.find('.featureCurrent')).to.have.length(1);
         expect(component.find('.featureNext')).to.have.length(0);

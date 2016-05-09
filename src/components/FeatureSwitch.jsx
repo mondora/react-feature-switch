@@ -32,16 +32,11 @@ export default class FeatureSwitch extends Component {
             const childernAsArray = React.Children.toArray(children);
             const isCurrentFeatureEnable = FeatureSwitch.isFeatureEnable(featureName, featuresList);
             const res = childernAsArray.filter(item => {
-                console.log('isCurrentFeatureEnable');
                 // console.log(isCurrentFeatureEnable);
                 // console.log(item.type);
-                console.log((item.type === FeatureCurrent && !isCurrentFeatureEnable) ||
-                    (item.type === FeatureNext && isCurrentFeatureEnable));
                 return (item.type === FeatureCurrent && !isCurrentFeatureEnable) ||
                 (item.type === FeatureNext && isCurrentFeatureEnable);
             });
-            console.log('res.length');
-            console.log(res.length);
             return res.length > 0? <div>{res}</div>: <div></div>;
         } else {
             return children.type === FeatureCurrent || children.type === FeatureNext? children: <div></div>;
