@@ -13,6 +13,10 @@
     "start": "NODE_ENV=production ./node_modules/.bin/babel-node index.js",
     "test": "NODE_ENV=test mocha --compilers js:babel-register --recursive"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/francescobarbera/react-feature-switch"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
