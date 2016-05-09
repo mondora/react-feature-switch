@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/francescobarbera/react-feature-switch/branch/master/graph/badge.svg)](https://codecov.io/gh/francescobarbera/react-feature-switch)
+
 React component to handle feature toggles
 
 ## Install
