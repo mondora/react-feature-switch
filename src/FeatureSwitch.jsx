@@ -19,16 +19,13 @@ export default class FeatureSwitch extends Component {
         return false;
     }
 
-    static isComponentToShow = (featureName, featureList) => {
-
-    }
-
     render () {
         const {children, featureName} = this.props;
         const {featuresList} = this.context;
+        const isCurrentFeatureEnable = FeatureSwitch.isFeatureEnable(featureName, featuresList);
+
         if (Array.isArray(children)) {
             const childernAsArray = React.Children.toArray(children);
-            const isCurrentFeatureEnable = FeatureSwitch.isFeatureEnable(featureName, featuresList);
             const res = childernAsArray.filter(item => {
                 // console.log(isCurrentFeatureEnable);
                 // console.log(item.type);
@@ -37,7 +34,8 @@ export default class FeatureSwitch extends Component {
             });
             return res.length > 0? <div>{res}</div>: <div></div>;
         } else {
-            return children.type === FeatureCurrent || children.type === FeatureNext? children: <div></div>;
+            return (children.type === FeatureCurrent && !isCurrentFeatureEnable) ||
+                (children.type === FeatureNext && isCurrentFeatureEnable)? children: <div></div>;
         }
     }
 }

@@ -56,6 +56,28 @@ describe('FeatureSwitch', () => {
         expect(component.find('.featureCurrent')).to.have.length(1);
         expect(component.find('.featureNext')).to.have.length(0);
     });
+    it('should not render FeatureNext if is the only FeatureSwitch component and feature is not enable', () => {
+        const component = mount(
+            <FeatureSwitchRoot featureList={[{featureName: 'feature1', enable: false}]}>
+                <div>
+                    <FeatureSwitch featureName='feature1'>
+                        <FeatureNext/>
+                    </FeatureSwitch>
+                </div>
+            </FeatureSwitchRoot>);
+        expect(component.find('.featureNext')).to.have.length(0);
+    });
+    it('should render FeatureNext if is the only FeatureSwitch component and feature is enable', () => {
+        const component = mount(
+            <FeatureSwitchRoot featureList={[{featureName: 'feature1', enable: true}]}>
+                <div>
+                    <FeatureSwitch featureName='feature1'>
+                        <FeatureNext/>
+                    </FeatureSwitch>
+                </div>
+            </FeatureSwitchRoot>);
+        expect(component.find('.featureNext')).to.have.length(1);
+    });
 });
 describe('isFeatureEnable', () => {
     it('should return false if feature is not present in feature list', () => {
