@@ -2,12 +2,14 @@
   "name": "react-feature-switch",
   "version": "0.0.1",
   "description": "React component to handle feature toggles",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel src --out-dir lib",
     "codecov": "codecov",
     "coverage": "NODE_ENV=test babel-node $(npm bin)/isparta cover $(npm bin)/_mocha -- --recursive",
     "dev": "npm test -- --watch --watch-extensions js,jsx",
     "lint": "eslint index.js ./src/*.js ./test/*.js",
+    "prepublish": "npm run build",
     "start": "NODE_ENV=production ./node_modules/.bin/babel-node index.js",
     "test": "NODE_ENV=test mocha --compilers js:babel-register --recursive"
   },
