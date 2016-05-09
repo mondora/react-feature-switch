@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/francescobarbera/react-feature-switch.svg?branch=master)](https://travis-ci.org/francescobarbera/react-feature-switch)
 [![codecov](https://codecov.io/gh/francescobarbera/react-feature-switch/branch/master/graph/badge.svg)](https://codecov.io/gh/francescobarbera/react-feature-switch)
 
 React component to handle feature toggles
