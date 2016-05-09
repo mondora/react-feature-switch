@@ -1,18 +1,13 @@
 import React, {Component, PropTypes} from 'react';
+import {featureListType} from './featureListType';
 
 export default class FeatureSwitchRoot extends Component {
     static propTypes = {
-        featureList: PropTypes.shape({
-            featureName: PropTypes.string.isRequired,
-            enable: PropTypes.bool.isRequired
-        })
+        featureList: featureListType
     }
 
     static childContextTypes = {
-        featuresList: PropTypes.shape({
-            featureName: PropTypes.string.isRequired,
-            enable: PropTypes.bool.isRequired
-        })
+        featuresList: featureListType
     }
 
     getChildContext = () => {

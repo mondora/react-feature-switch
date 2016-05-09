@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import FeatureCurrent from './FeatureCurrent';
 import FeatureNext from './FeatureNext';
+import {featureListType} from './featureListType';
 
 export default class FeatureSwitch extends Component {
     static propTypes = {
@@ -8,10 +9,7 @@ export default class FeatureSwitch extends Component {
     }
 
     static contextTypes = {
-        featuresList: PropTypes.shape({
-            featureName: PropTypes.string.isRequired,
-            enable: PropTypes.bool.isRequired
-        })
+        featuresList: featureListType
     }
 
     static isFeatureEnable = (featureName, featureList) => {

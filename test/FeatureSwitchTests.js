@@ -1,12 +1,12 @@
-import React, {Component, PropTypes} from 'react';
+import React from 'react';
 import chai, {expect} from 'chai';
 import {mount} from 'enzyme';
 import chaiEnzyme from 'chai-enzyme';
-import FeatureSwitch from '../../src/components/FeatureSwitch';
-import FeatureNext from '../../src/components/FeatureNext';
-import FeatureCurrent from '../../src/components/FeatureCurrent';
-import FeatureSwitchRoot from '../../src/components/FeatureSwitchRoot';
-import jsdom from 'jsdom'
+import FeatureSwitch from '../src/FeatureSwitch';
+import FeatureNext from '../src/FeatureNext';
+import FeatureCurrent from '../src/FeatureCurrent';
+import FeatureSwitchRoot from '../src/FeatureSwitchRoot';
+import jsdom from 'jsdom';
 
 const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.document = doc;
