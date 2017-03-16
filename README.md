@@ -1,5 +1,8 @@
-[![Build Status](https://travis-ci.org/francescobarbera/react-feature-switch.svg?branch=master)](https://travis-ci.org/francescobarbera/react-feature-switch)
-[![codecov](https://codecov.io/gh/francescobarbera/react-feature-switch/branch/master/graph/badge.svg)](https://codecov.io/gh/francescobarbera/react-feature-switch)
+[![npm version](https://badge.fury.io/js/react-feature-switch.svg)](https://badge.fury.io/js/react-feature-switch)
+[![Build Status](https://travis-ci.org/mondora/react-feature-switch.svg?branch=master)](https://travis-ci.org/mondora/react-feature-switch)
+[![Coverage Status](https://coveralls.io/repos/github/mondora/react-feature-switch/badge.svg?branch=master)](https://coveralls.io/github/mondora/react-feature-switch?branch=master)
+[![Dependency Status](https://david-dm.org/mondora/react-feature-switch.svg)](https://david-dm.org/mondora/react-feature-switch)
+[![devDependency Status](https://david-dm.org/mondora/react-feature-switch/dev-status.svg)](https://david-dm.org/mondora/react-feature-switch#info=devDependencies)
 
 React component to handle feature toggles
 
