@@ -11,12 +11,16 @@ React component to handle feature toggles
 `npm install --save react-feature-switch`
 
 ## Components
+
 ### FeatureSwitchRoot
 used to store in context features list
+
 ### FeatureSwitch
 local component to handle feature
+
 ### FeatureNext
 component that wraps feature that should be shown if current feature is enable
+
 ### FeatureCurrent
 component that wraps feature that should not be shown if current feature is disable
 
